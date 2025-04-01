@@ -1,29 +1,39 @@
 [
   {
-    "id": "ai-agent-alpha",
-    "name": "AI Agent Alpha",
-    "description": "A cutting-edge AI agent designed for complex data analysis and automation. Includes tutorial videos and setup guides.",
+    "id": "personalized-ai-sales-agent",
+    "name": "Personalized AI Sales Agent",
+    "description": "Create hyper-personalized cold emails that sound genuinely human-written. Connects to your CRM and automatically researches prospects using Perplexity and Claude AI.",
     "imageUrl": "/images/g6hnPm2gtTqbe1f9kc1gX_image.png",
-    "downloadUrl": "/downloads/ai-agent-alpha.zip",
-    "details": "Detailed information about AI Agent Alpha, features, system requirements, and usage instructions...",
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    "downloadUrl": "/GHL Sales Agent.json.zip",
+    "details": "The Personalized AI Sales Agent is a powerful tool designed to help sales professionals create hyper-personalized cold emails that genuinely sound human-written. This free tool connects directly to your CRM system, researches prospects automatically using Perplexity and Claude AI, and generates highly personalized emails based on your provided examples.\n\nKey features include:\n- CRM Integration with most popular platforms (HubSpot, Pipedrive, Close.io, etc.)\n- AI-Powered Research using Perplexity AI\n- Customizable Templates that learn your specific writing style\n- Email Signature Generation using your brand colors\n- Competitor and Employee Research for deeper personalization\n- Webhook-Based Automation that triggers directly from CRM workflows\n\nThe system operates through make.com's automation platform, giving you complete ownership and control while requiring minimal technical expertise to set up and use.\n\n[Written Instructions](https://drive.google.com/file/d/1XymhDr5uNYtI6yUJvRU9BszrxLCrur0p/view?usp=sharing)",
+    "videoUrl": "https://www.loom.com/share/a94b6fb4a8a44e82b8e995f2b68fa444?sid=85033f44-3d7d-4f5a-9449-27f205948106"
   },
   {
-    "id": "chrome-ext-boost",
-    "name": "Chrome Extension Boost",
-    "description": "Enhance your browsing experience with this powerful Chrome extension. Boost productivity and streamline workflows.",
+    "id": "rise-in-spirit-productivity-extension",
+    "name": "Rise in Spirit Productivity Extension",
+    "description": "A productivity-focused Chrome extension designed specifically for women to automatically block distracting websites and help you stay on track with your personal growth journey.",
     "imageUrl": "/images/QKaVswNc_UGsthXjVlaqP_image.png",
-    "downloadUrl": "/downloads/chrome-ext-boost.zip",
-    "details": "Discover the features of Chrome Extension Boost, installation guide, and tips for maximizing its potential...",
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    "downloadUrl": "/Productivity Chrome Extension.zip",
+    "details": "The Rise in Spirit Productivity Extension is a simple yet powerful Chrome extension designed specifically for women who want to transform their mindset and unleash their full potential.\n\nThis productivity tool helps you prioritize yourself by automatically blocking websites that distract you from your personal growth journey. With an easy setup process, you can quickly configure which sites to block, allowing you to focus on what truly matters.\n\nKey features include:\n- Simple website blocking configuration\n- Customizable blocking schedules\n- Motivational messages to keep you on track\n- Clean, intuitive interface\n- Designed specifically with women's productivity needs in mind\n\nCreated by Rise in Spirit Academy, this extension embodies their philosophy of \"Heal, Grow, Transform\" - helping you transform your mindset, unleash your full potential, and become the best version of yourself.",
+    "videoUrl": "https://www.loom.com/share/2ca4126e7923473381922f0cbda33772?sid=b679becb-cc67-4878-a73c-596cb7bffe2d"
   },
   {
-    "id": "devtool-suite-x",
-    "name": "DevTool Suite X",
-    "description": "A comprehensive suite of tools for developers. Includes debuggers, code analyzers, and performance monitors.",
+    "id": "linkedin-research-blueprint",
+    "name": "LinkedIn Research Automation",
+    "description": "Automatically research prospects using ChatGPT and Perplexity AI. Seamlessly update your CRM with detailed profiles and insights to prepare for meetings and sales calls.",
     "imageUrl": "/images/sIlxTrpYCHqjbzUAqbpOL_image.png",
-    "downloadUrl": "/downloads/devtool-suite-x.zip",
-    "details": "Explore DevTool Suite X, its components, integration capabilities, and documentation...",
-    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    "downloadUrl": "/LinkedIn Research Blueprint.json.zip",
+    "details": "The LinkedIn Research Automation tool is a powerful Make.com blueprint that transforms how you research and prepare for meetings. This automation connects your CRM or Notion database with AI tools to gather comprehensive information about prospects in seconds.\n\nKey features include:\n- Automated LinkedIn profile scanning and data extraction\n- AI-powered research using ChatGPT and Perplexity\n- Comprehensive prospect profiles including work history, skills, and company information\n- Seamless integration with Notion databases and popular CRMs\n- Regular automatic updates to keep information current\n- Custom notification systems when new research is complete\n\nThis tool is perfect for sales professionals, recruiters, networkers, and anyone who needs to quickly gather detailed information about prospects before meetings. The system operates through Make.com's automation platform, giving you complete control while requiring minimal technical expertise to set up.\n\nImplementation is cost-effective with free trials available for all the required tools and tiered subscription models to suit different budgets.",
+    "videoUrl": "https://www.youtube.com/embed/Tur-HRXmSfA"
+  },
+  {
+    "id": "linkedin-auto-comment-bot",
+    "name": "LinkedIn Auto-Comment Bot",
+    "description": "Automate LinkedIn engagement by identifying relevant posts and generating contextual comments using Phantom Buster and Make. Save hours daily.",
+    "imageUrl": "/cHYHPDK8x3opx6_v8-PPm_image.png",
+    "downloadUrl": "/LinkedIn AI Autocomment (1).json.zip",
+    "details": "Automated LinkedIn engagement bot using Phantom Buster & Make. Saves ~2 hours daily. Features: Automated post discovery, AI comment generation, scheduling, GSheet management. Requires Phantom Buster, Make.com, Google accounts. Includes detailed setup guide and overview video. [Written Instructions](https://docs.google.com/document/d/1l7AHEfQG40L66t2bAfQVRoMca1pVocpq0FMRUKs_u6w/edit?usp=sharing).",
+    "videoUrl": "https://www.loom.com/embed/f074e1844a814c80af866b4569a19e51?sid=327d2171-39e5-4cbe-921e-cae295efee65",
+    "localVideoUrl": "/images/LinkedIn AI Autocomment.mp4"
   }
 ]

@@ -5,7 +5,9 @@ import { useAuth } from '@/context/AuthContext';
 import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, Download, PlayCircle, Package, AlertTriangle } from 'lucide-react'; 
+import { ArrowLeft, Download, PlayCircle, Package, AlertTriangle, FileText, ExternalLink } from 'lucide-react'; 
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 // Shared Product type
 interface Product {
@@ -16,6 +18,7 @@ interface Product {
   downloadUrl: string;
   details?: string;
   videoUrl?: string;
+  localVideoUrl?: string;
 }
 
 export default function ProductDetailPage() {
@@ -97,6 +100,34 @@ export default function ProductDetailPage() {
     );
   }
 
+  // Extract documentation URL from product details if available
+  const extractDocumentationUrl = (details?: string) => {
+    if (!details) return null;
+    
+    // Extract Google Docs URL using regex
+    const docsMatch = details.match(/\[Written Instructions\]\((https:\/\/docs\.google\.com[^)]+)\)/);
+    return docsMatch ? docsMatch[1] : null;
+  };
+
+  // Convert Loom share URL to embed URL if needed
+  const getLoomEmbedUrl = (videoUrl?: string): string | undefined => {
+    if (!videoUrl) return undefined;
+    
+    // Check if it's a Loom URL
+    if (videoUrl.includes('loom.com/share/')) {
+      // Extract the video ID and sid
+      const match = videoUrl.match(/loom\.com\/share\/([a-zA-Z0-9]+)(?:\?sid=([a-zA-Z0-9-]+))?/);
+      if (match) {
+        const videoId = match[1];
+        const sid = match[2] || '';
+        return `https://www.loom.com/embed/${videoId}${sid ? `?sid=${sid}` : ''}`;
+      }
+    }
+    
+    // Return the original URL if it's not a Loom URL or already in embed format
+    return videoUrl;
+  };
+
   // Enhanced Product Detail Layout
   return (
     <div className="min-h-screen bg-gradient-cool-bl from-gradient-cool_deep_blue via-gradient-cool_mid_blue to-gradient-cool_light_blue text-text_color p-8 md:p-12">
@@ -157,28 +188,68 @@ export default function ProductDetailPage() {
           {product.details && (
             <div className="space-y-4">
               <h2 className="text-2xl font-semibold border-b border-border_color/30 pb-3">Specifications & Setup</h2>
-              <div className="prose prose-invert max-w-none text-text_color-muted prose-headings:text-text_color prose-a:text-brand-blue hover:prose-a:text-brand-blue_dark">
-                 {/* Consider using react-markdown here for rich text */}
-                 <p className="whitespace-pre-wrap">{product.details}</p> 
+              <div className="prose prose-invert max-w-none text-text_color-muted prose-headings:text-text_color prose-a:text-brand-blue hover:prose-a:text-brand-blue_dark prose-img:mx-auto prose-img:max-w-[200px] prose-img:my-4">
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{product.details}</ReactMarkdown>
               </div>
             </div>
           )}
 
           {product.videoUrl && (
-            <div className="space-y-4">
+            <div className="space-y-6">
               <h2 className="text-2xl font-semibold border-b border-border_color/30 pb-3 flex items-center">
                 <PlayCircle className="mr-3 h-6 w-6 text-brand-blue" /> Guidance
               </h2>
-              <div className="aspect-video rounded-lg overflow-hidden shadow-lg border border-border_color bg-background-alt">
-                <iframe 
-                  src={product.videoUrl} 
-                  title={`${product.name} Guidance Video`} 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
-              </div>
+              
+              {/* Extract resource links */}
+              {(() => {
+                const docsUrl = extractDocumentationUrl(product.details);
+                return (
+                  <>
+                    {/* Documentation Link Button */}
+                    {docsUrl && (
+                      <a 
+                        href={docsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-brand-blue hover:bg-brand-blue_dark text-white rounded-lg mb-6 transition-colors"
+                      >
+                        <FileText className="mr-2 h-5 w-5" />
+                        View Written Instructions
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    )}
+                    
+                    {/* Loom Video Embed */}
+                    <div className="aspect-video rounded-lg overflow-hidden shadow-lg border border-border_color bg-background-alt mb-6">
+                      <iframe 
+                        src={getLoomEmbedUrl(product.videoUrl)} 
+                        title={`${product.name} Guidance Video`} 
+                        frameBorder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen
+                        className="w-full h-full"
+                      ></iframe>
+                    </div>
+                    
+                    {/* Local MP4 Video Player */}
+                    {product.localVideoUrl && (
+                      <div className="mt-6">
+                        <h3 className="text-xl font-medium mb-3">Overview Video</h3>
+                        <div className="aspect-video rounded-lg overflow-hidden shadow-lg border border-border_color bg-background-alt">
+                          <video 
+                            src={product.localVideoUrl} 
+                            controls 
+                            className="w-full h-full"
+                            poster="/images/video-thumbnail.png"
+                          >
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
             </div>
           )}
         </div>
