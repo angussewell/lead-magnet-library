@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ai-agent-alpha",
+    "name": "AI Agent Alpha",
+    "description": "A cutting-edge AI agent designed for complex data analysis and automation. Includes tutorial videos and setup guides.",
+    "imageUrl": "/images/g6hnPm2gtTqbe1f9kc1gX_image.png",
+    "downloadUrl": "/downloads/ai-agent-alpha.zip",
+    "details": "Detailed information about AI Agent Alpha, features, system requirements, and usage instructions...",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    "id": "chrome-ext-boost",
+    "name": "Chrome Extension Boost",
+    "description": "Enhance your browsing experience with this powerful Chrome extension. Boost productivity and streamline workflows.",
+    "imageUrl": "/images/QKaVswNc_UGsthXjVlaqP_image.png",
+    "downloadUrl": "/downloads/chrome-ext-boost.zip",
+    "details": "Discover the features of Chrome Extension Boost, installation guide, and tips for maximizing its potential...",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  {
+    "id": "devtool-suite-x",
+    "name": "DevTool Suite X",
+    "description": "A comprehensive suite of tools for developers. Includes debuggers, code analyzers, and performance monitors.",
+    "imageUrl": "/images/sIlxTrpYCHqjbzUAqbpOL_image.png",
+    "downloadUrl": "/downloads/devtool-suite-x.zip",
+    "details": "Explore DevTool Suite X, its components, integration capabilities, and documentation...",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  }
+]
